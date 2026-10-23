@@ -1,32 +1,55 @@
 <!DOCTYPE html>
+<!-- The line above tells the browser this is a modern HTML5 page; it must stay first -->
+<!-- Start of the page -->
 <html>
+<!-- Page settings that aren't shown on screen -->
 <head>
+    <!-- Use UTF-8 so all characters display correctly -->
     <meta charset='utf-8'>
+    <!-- Ask old Internet Explorer to use its newest rendering mode -->
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!-- Text shown on the browser tab -->
     <title>WebRTC</title>
+    <!-- Fit the page to the screen width on phones -->
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Load the page styles from main.css -->
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    
+
 </head>
+<!-- Everything visible on the page -->
 <body>
 
+    <!-- Container that places the two videos side by side -->
     <div id="videos">
+        <!-- Left box: our own camera; autoplay starts it, playsinline stops phones going fullscreen -->
         <video class="video-player" id="user-1" autoplay playsinline></video>
+        <!-- Right box: the other browser's camera -->
         <video class="video-player" id="user-2" autoplay playsinline></video>
     </div>
 
+    <!-- Manual button to create an offer (turned off in main.js; the call connects by itself) -->
     <button id="create-offer">Create Offer</button>
+    <!-- Label for the offer text box -->
     <label>SDP Offer</label>
+    <!-- Shows the offer: the description of the caller's video and connection settings -->
     <textarea id="offer-sdp"></textarea>
 
+    <!-- Manual button to create an answer (also turned off) -->
     <button id="create-answer">Create Answer</button>
+    <!-- Label for the answer text box -->
     <label>SDP Answer</label>
+    <!-- Shows the answer: the other browser's reply to the offer -->
     <textarea id="answer-sdp"></textarea>
 
+    <!-- Manual button to apply the answer (also turned off) -->
     <button id="add-answer">Add Answer</button>
-    
+
 </body>
+<!-- Agora messaging library, used to pass signaling messages between the browsers -->
 <script src="agora-rtm-sdk-1.4.4.js"></script>
+<!-- Our App ID and user tokens (kept out of git); must load before main.js -->
 <script src="config.js"></script>
+<!-- The app code that starts the camera and the call -->
 <script src='main.js'></script>
+<!-- End of the page -->
 </html>

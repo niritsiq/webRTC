@@ -1,29 +1,48 @@
+/* Styles for the whole page */
 body{
+    /* Keep the page 800px wide on large screens */
     width:800px;
+    /* Center the page horizontally */
     margin:0 auto;
 }
 
+/* The box holding both videos */
 #videos{
+    /* Lay the videos out in a grid */
     display: grid;
+    /* Two equal-width columns, one per video */
     grid-template-columns: 1fr 1fr;
+    /* Space between the two videos */
     column-gap: 1em;
+    /* Use the full page width */
     width: 100%;
+    /* Space around the videos */
     padding: 10px;
 }
 
+/* Both video boxes */
 video{
+    /* Fill the grid column */
     width:100%;
+    /* Green outline around each video */
     border:2px solid greenyellow;
+    /* Dark grey background shown before the video starts */
     background-color: rgb(63,62,62);
 }
 
+/* The offer and answer text boxes */
 textarea{
+    /* Short boxes, since the text is only for viewing */
     height: 50px;
+    /* Span the full page width */
     width: 100%;
 }
 
+/* On screens 800px wide or narrower, such as phones */
 @media screen and (max-width:800px) {
+    /* Styles for the whole page on small screens */
     body{
+        /* Use the full screen width instead of a fixed 800px */
         width:100%;
     }
 }
