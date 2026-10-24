@@ -2,4 +2,7 @@ services:
   web:
     build: .
     ports:
+      # This PC only: http://127.0.0.1:5500
       - "127.0.0.1:5500:80"
+      # Other machines on the network: https://<this PC's IP>:5443
+      - "5443:443"
